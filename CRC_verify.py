@@ -117,7 +117,7 @@ if __name__=="__main__":
     print("CRC4 computed: %s (as hex: %s)" % (crc4, hex(crc4)))
 
     # Full test with SREC FW-file:
-    rfp = open("IrrigationSensorAppl_FW1.srec", 'r')
+    rfp = open("test_srec_1.srec", 'r')
     crc5, allData1 = calculate_file_crc(rfp)
     rfp.seek(0)
     crc6, allData2 = calculate_file_crc2(rfp)
@@ -131,7 +131,7 @@ if __name__=="__main__":
     else:
         print("INFO: binary data equal ...")
     #
-    wfp = open("IrrigationSensorAppl_FW1.bin", 'wb')
+    wfp = open("test_srec_1.bin", 'wb')
     wfp.write(allData1)
     wfp.close()
 
